@@ -19,10 +19,11 @@ This project implements a simple **RISC-V single-cycle processor** using Verilog
 - `tb_riscv_processor.v` — Testbench
 
 ## ▶️ How to Simulate
-Use any Verilog simulator (ModelSim, Icarus Verilog, etc.)
+Use any Verilog simulator (ModelSim)
 
 ## 🧪 Test
-To run the testbench:
-```bash
-iverilog -o testbench tb_riscv_processor.v *.v
-vvp testbench
+•	Trong Transcript, cd D:/Test
+•	Biên dịch lại: vlog *.v (Hoặc liệt kê tên file, đảm bảo testbench cuối cùng)
+•	Chạy mô phỏng: vsim work.tb_riscv_processor
+•	Thêm (một vài) tín hiệu vào Wave (ví dụ chỉ clk, rst, pc_current, instruction).
+•	run 500 ns
