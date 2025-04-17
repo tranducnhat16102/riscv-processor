@@ -122,6 +122,41 @@ module riscv_single_cycle_processor (
 
     // --- Helper Modules (Need to be defined) ---
     // Example: pc_reg, adder, mux2to1
+ // --- TASKS FOR EACH STAGE ---
+
+    // Instruction Fetch
+    task fetch;
+        begin
+            $display("[FETCH] PC = %h", pc_current);
+            $display("[FETCH] Instruction = %h", instruction);
+        end
+    endtask
+
+    // Instruction Decode
+    task decode;
+        begin
+            $display("[DECODE] rs1 = x%0d = %h", instruction[19:15], rs1_data);
+            $display("[DECODE] rs2 = x%0d = %h", instruction[24:20], rs2_data);
+            $display("[DECODE] imm = %h", imm_extended);
+            $display("[DECODE] ALUOp = %b, ALUSrc = %b", ALUOp, ALUSrc);
+        end
+    endtask
+
+    // Execute
+    task execute;
+        begin
+            $display("[EXECUTE] ALU Operand A = %h", rs1_data);
+            $display("[EXECUTE] ALU Operand B = %h", alu_operand_b);
+            $display("[EXECUTE] Result = %h, Zero = %b", alu_result, alu_zero_flag);
+        end
+    endtask
+
+    // Writeback
+    task writeback;
+        begin
+            $display("[WRITEBACK] Write back to x%0d = %h", instruction[11:7], write_back_data);
+        end
+    endtask
 
 endmodule
 
