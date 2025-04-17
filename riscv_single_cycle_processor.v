@@ -3,11 +3,11 @@ module riscv_single_cycle_processor (
     input rst
 );
 
-    // Tín hi?u ?i?u khi?n
+   // Tin hieu dieu khien
     wire        RegWrite, MemRead, MemWrite, MemtoReg, ALUSrc, Branch;
     wire [3:0]  ALUOp;
 
-    // D? li?u và ??a ch?
+    // Du lieu và dia chi
     wire [31:0] pc_current;
     wire [31:0] pc_next, pc_plus_4;
     wire [31:0] instruction;

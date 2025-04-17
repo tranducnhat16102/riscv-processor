@@ -21,7 +21,7 @@ module immediate_generator (
                 imm_extended = {{19{instruction[31]}}, instruction[31], instruction[7], instruction[30:25], instruction[11:8], 1'b0}; // Sign extend and shift
             end
             // Thêm các lo?i immediate khác n?u c?n (J-type, U-type)
-            default: imm_extended = 32'hxxxxxxxx; // Không xác ??nh
+            default: imm_extended = 32'hxxxxxxxx; // Không xác dinh
         endcase
     end
 endmodule
